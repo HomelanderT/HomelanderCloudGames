@@ -1,0 +1,107 @@
+
+:root{
+  --bg:#0f1113;
+  --card:#0f1315;
+  --muted:#9aa5ad;
+  --accent:#b31212;
+  --accent-dark:#7b0000;
+  --text:#e6eef2;
+  --maxw:1000px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background:linear-gradient(180deg,#0b0c0d 0%, #0f1113 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.55;
+}
+.header{
+  background:linear-gradient(90deg,var(--accent-dark),var(--accent));
+  padding:20px 24px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.6);
+  position:sticky;
+  top:0;
+  z-index:30;
+}
+.header .wrap{
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.brand{
+  display:flex;
+  flex-direction:column;
+}
+.brand h1{
+  margin:0;
+  font-size:20px;
+  letter-spacing:0.06em;
+  font-weight:700;
+}
+.brand p{
+  margin:0;
+  font-size:12px;
+  opacity:0.95;
+}
+.nav{
+  margin-left:auto;
+  display:flex;
+  gap:10px;
+}
+.nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:6px;
+  font-weight:600;
+  font-size:13px;
+  opacity:0.95;
+}
+.nav a:hover{ background: rgba(255,255,255,0.03); transform:translateY(-1px); }
+
+.container{
+  max-width:var(--maxw);
+  margin:28px auto;
+  padding:20px;
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+  padding:28px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.6);
+}
+h2{ margin-top:0; color:var(--accent); font-size:20px; letter-spacing:0.02em;}
+p, li{ color:var(--text); font-size:15px; }
+small{ color:var(--muted); }
+
+.index-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+.card.short{ padding:18px; }
+
+.footer{
+  margin-top:28px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  padding:24px 0;
+}
+
+/* content helpers */
+pre{ background:rgba(255,255,255,0.02); padding:12px; border-radius:6px; overflow:auto; color:var(--text); }
+.code{ font-family:monospace; font-size:13px; color:var(--text); }
+
+/* responsive */
+@media (max-width:640px){
+  .header .wrap{ flex-direction:column; align-items:flex-start; gap:12px; }
+  .nav{ width:100%; justify-content:space-between; }
+}
